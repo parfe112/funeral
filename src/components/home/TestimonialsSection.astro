@@ -4,19 +4,19 @@ const testimonials = [
     name: "Elena Mihalache",
     location: "București",
     text: "Le sunt recunoscătoare echipei Forever pentru promptitudinea și seriozitatea demonstrată pe tot parcursul organizării evenimentului nefericit prin care am trecut. Mi-au pus la dispoziție toate serviciile necesare pentru pregătirea și desfășurarea înmormântării în cele mai bune condiții. Recomand tuturor să apeleze cu încredere la firma Forever!",
-    avatar: "/images/testimonial-1.jpg"
+    initials: "EM"
   },
   {
     name: "Emilia Vasilescu",
     location: "București",
     text: "În organizarea înmormântării bunicii mele, cei de la firma Forever mi-au oferit cele mai potrivite soluții și sfaturi ținând cont de cerințele pe care le-am avut. Implicarea, profesionalismul și corectitudinea de care au dat dovadă sunt calitățile care descriu cel mai bine echipa. Un alt lucru de apreciat este disponibilitatea lor de a răspunde la solicitări indiferent de oră.",
-    avatar: "/images/testimonial-2.jpg"
+    initials: "EV"
   },
   {
-    name: "Maria S.",
+    name: "Maria Stanciu",
     location: "București",
     text: "La pierderea unui membru important al familiei mele, am apelat la firma Forever pentru a ne ajuta în pregătirea evenimentului trist. Apreciez foarte mult faptul că cei de la Forever și-au dat interesul să îmi ofere sprijin în organizare: de la obținerea documentelor, alegerea pachetului de înmormântare potrivit dorințelor noastre și până la desfășurarea efectivă a înmormântării.",
-    avatar: "/images/testimonial-3.jpg"
+    initials: "MS"
   }
 ];
 ---
@@ -47,15 +47,8 @@ const testimonials = [
           
           <!-- Author info -->
           <div class="mt-auto flex items-center">
-            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
-              <img 
-                src={testimonial.avatar} 
-                alt={`Imagine ${testimonial.name}`} 
-                class="w-full h-full object-cover"
-                width="48"
-                height="48"
-                loading="lazy"
-              />
+            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-accent flex items-center justify-center text-white font-medium">
+              {testimonial.initials}
             </div>
             <div>
               <h4 class="font-bold text-gray-900">{testimonial.name}</h4>

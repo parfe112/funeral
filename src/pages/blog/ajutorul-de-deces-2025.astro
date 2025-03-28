@@ -1,0 +1,288 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Detalii articol
+const articleData = {
+  title: "Ajutorul de deces în 2025",
+  date: "10 Februarie 2025",
+  image: "/images/ajutor-deces.jpg",
+  author: "Echipa Forever",
+  category: "Legislație"
+};
+
+// Articole recomandate
+const relatedPosts = [
+  {
+    title: "Cum să pregătești ceremonia de înmormântare",
+    slug: "/blog/cum-sa-pregatesti-ceremonia-de-inmormantare",
+    image: "/images/ceremonie-inm.jpg"
+  },
+  {
+    title: "Cum alegi o agenție profesionistă de servicii funerare?",
+    slug: "/blog/cum-alegi-agentie-funerara-profesionista",
+    image: "/images/agentie-prof.jpg"
+  }
+];
+---
+
+<Layout 
+  title={`${articleData.title} - Forever Funeral Home`} 
+  description="Informații actualizate despre ajutorul de deces în 2025. Află suma acordată, documentele necesare și procedura de obținere."
+>
+  <!-- Hero section -->
+  <section class="bg-gray-900 text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-40">
+      <img 
+        src={articleData.image} 
+        alt={articleData.title} 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-900/70 to-gray-900"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-2 text-accent mb-4">
+          <span>{articleData.category}</span>
+          <span>•</span>
+          <span>{articleData.date}</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">{articleData.title}</h1>
+        
+        <div class="flex items-center">
+          <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white font-medium mr-3">
+            {articleData.author.split(' ')[0][0]}{articleData.author.split(' ')[1]?.[0] || ''}
+          </div>
+          <span>De {articleData.author}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article content -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <p class="lead">
+            Ajutorul de deces reprezintă un sprijin financiar oferit de stat în cazul decesului unei persoane. În 2025, acest ajutor a fost actualizat și este important să cunoașteți detaliile esențiale despre valoarea acestuia, beneficiarii și procedurile de obținere.
+          </p>
+          
+          <h2>Valoarea ajutorului de deces în 2025</h2>
+          
+          <p>
+            Începând cu 1 ianuarie 2025, ajutorul de deces a crescut semnificativ față de anii precedenți, fiind indexat cu rata inflației. Conform legislației actuale, valorile sunt următoarele:
+          </p>
+          
+          <div class="bg-gray-50 p-6 rounded-xl my-6 overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead>
+                <tr>
+                  <th class="py-3 px-4 text-left font-semibold text-gray-900">Categoria beneficiarului</th>
+                  <th class="py-3 px-4 text-right font-semibold text-gray-900">Suma (RON)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr>
+                  <td class="py-3 px-4 text-gray-800">Pentru asigurat sau pensionar</td>
+                  <td class="py-3 px-4 text-right font-medium">7.567 RON</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 text-gray-800">Pentru un membru de familie al asiguratului sau pensionarului</td>
+                  <td class="py-3 px-4 text-right font-medium">3.784 RON</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <p>
+            Este important de menționat că aceste sume sunt valabile pentru anul 2025 și sunt actualizate anual de către Casa Națională de Pensii Publice (CNPP).
+          </p>
+          
+          <h2>Cine poate beneficia de ajutorul de deces?</h2>
+          
+          <p>
+            Ajutorul de deces poate fi solicitat de:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Asigurații din sistemul public de pensii</strong> - persoanele care au plătit contribuții la sistemul de asigurări sociale
+            </li>
+            <li>
+              <strong>Pensionarii</strong> - indiferent de tipul pensiei: pentru limită de vârstă, pensie anticipată, pensie de invaliditate, etc.
+            </li>
+            <li>
+              <strong>Persoanele care au în întreținere membrul de familie decedat</strong> - soț/soție, copii, părinți sau alte persoane care au fost în întreținerea decedatului
+            </li>
+            <li>
+              <strong>Persoanele care dovedesc că au suportat cheltuielile de înmormântare</strong> - chiar dacă nu sunt membri de familie
+            </li>
+          </ul>
+          
+          <h2>Documentele necesare pentru obținerea ajutorului de deces</h2>
+          
+          <p>
+            Pentru a solicita ajutorul de deces, sunt necesare următoarele documente:
+          </p>
+          
+          <ol>
+            <li>
+              <strong>Cerere tip pentru acordarea ajutorului de deces</strong> - aceasta se găsește la Casa Teritorială de Pensii sau poate fi descărcată de pe site-ul CNPP
+            </li>
+            <li>
+              <strong>Certificatul de deces (original și copie)</strong>
+            </li>
+            <li>
+              <strong>Actul de identitate al solicitantului (original și copie)</strong>
+            </li>
+            <li>
+              <strong>Documente care atestă calitatea de asigurat sau pensionar a decedatului:</strong>
+              <ul>
+                <li>Cupon de pensie (pentru pensionari)</li>
+                <li>Adeverință de salariat (pentru asigurați)</li>
+                <li>Declarație pe propria răspundere că decedatul nu avea calitatea de asigurat sau pensionar (dacă este cazul)</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Acte doveditoare pentru cheltuielile de înmormântare:</strong>
+              <ul>
+                <li>Facturi</li>
+                <li>Chitanțe</li>
+                <li>Alte documente care atestă cheltuielile efectuate</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Documente care atestă calitatea solicitantului:</strong>
+              <ul>
+                <li>Certificate de naștere, de căsătorie (pentru a dovedi gradul de rudenie)</li>
+                <li>Declarație pe propria răspundere că solicitantul a suportat cheltuielile de înmormântare</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="bg-amber-50 p-6 rounded-lg my-8 border-l-4 border-amber-500">
+            <h3 class="text-xl font-bold mb-2 text-amber-800">Important</h3>
+            <p class="mb-0">
+              Ajutorul de deces se acordă o singură dată pentru fiecare deces. Termenul limită pentru depunerea cererii și a documentelor este de 60 de zile calendaristice de la data decesului.
+            </p>
+          </div>
+          
+          <h2>Unde și cum se depune cererea pentru ajutorul de deces?</h2>
+          
+          <p>
+            Cererea și documentele necesare pot fi depuse la:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Casa Teritorială de Pensii</strong> - din județul în care a avut domiciliul asiguratul/pensionarul decedat
+            </li>
+            <li>
+              <strong>Angajator</strong> - dacă decedatul era angajat iar angajatorul se ocupă de acordarea ajutorului
+            </li>
+            <li>
+              <strong>Online</strong> - prin intermediul platformei de servicii electronice a CNPP, cu documente semnate electronic (opțiune disponibilă din 2024)
+            </li>
+          </ul>
+          
+          <p>
+            Plata ajutorului de deces se face în maximum 24 de ore de la depunerea cererii, dacă aceasta a fost înregistrată în timpul programului de lucru.
+          </p>
+          
+          <h2>Cum vă poate ajuta Forever Funeral Home?</h2>
+          
+          <p>
+            Echipa noastră de specialiști poate oferi sprijin complet în procesul de obținere a ajutorului de deces:
+          </p>
+          
+          <ul>
+            <li>Asistență în completarea formularelor necesare</li>
+            <li>Consiliere privind documentele necesare și procedurile de urmat</li>
+            <li>Reprezentare în relația cu instituțiile publice</li>
+            <li>Informații actualizate despre legislația în vigoare</li>
+          </ul>
+          
+          <div class="bg-gray-50 p-6 rounded-lg my-8 border-l-4 border-accent">
+            <h3 class="text-xl font-bold mb-2">Recomandare</h3>
+            <p class="mb-0">
+              Pentru a simplifica procesul într-un moment dificil, vă recomandăm să apelați la serviciile noastre complete. Echipa Forever Funeral Home vă poate ghida prin toate etapele, de la obținerea documentelor necesare până la depunerea cererii pentru ajutorul de deces, permițându-vă să vă concentrați asupra aspectelor emoționale ale pierderii.
+            </p>
+          </div>
+          
+          <h2>Concluzii</h2>
+          
+          <p>
+            Ajutorul de deces reprezintă un sprijin important în acoperirea parțială a cheltuielilor de înmormântare. Valorile actualizate pentru 2025 reflectă efortul statului român de a oferi un sprijin adecvat familiilor îndoliate. Este esențial să cunoașteți drepturile și procedurile pentru a beneficia de acest ajutor în termenele prevăzute de lege.
+          </p>
+          
+          <p>
+            Pentru mai multe informații sau asistență în obținerea ajutorului de deces, contactați echipa Forever Funeral Home la numărul de telefon <a href="tel:0770171711">0770 171 711</a>, disponibil 24/7.
+          </p>
+        </div>
+        
+        <!-- Author and share section -->
+        <div class="mt-12 flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-t border-b border-gray-200">
+          <div class="flex items-center mb-4 md:mb-0">
+            <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-medium mr-4">
+              {articleData.author.split(' ')[0][0]}{articleData.author.split(' ')[1]?.[0] || ''}
+            </div>
+            <div>
+              <div class="font-medium text-gray-900">Scris de</div>
+              <div class="text-gray-600">{articleData.author}</div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="font-medium text-gray-900 mb-2">Distribuie articolul</div>
+            <div class="flex gap-3">
+              <a href="#" class="text-gray-500 hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-serif font-bold mb-12 text-center text-gray-900">Articole similare</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {relatedPosts.map(post => (
+            <a href={post.slug} class="block group">
+              <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                    width="400"
+                    height="200"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-accent transition-colors">
+                    {post.title}
+                  </h3>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 

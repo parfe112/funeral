@@ -1,0 +1,311 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Detalii articol
+const articleData = {
+  title: "Cum alegi o agenție profesionistă de servicii funerare?",
+  date: "5 Ianuarie 2025",
+  image: "/images/agentie-prof.jpg",
+  author: "Echipa Forever",
+  category: "Sfaturi utile"
+};
+
+// Articole recomandate
+const relatedPosts = [
+  {
+    title: "Cum să pregătești ceremonia de înmormântare",
+    slug: "/blog/cum-sa-pregatesti-ceremonia-de-inmormantare",
+    image: "/images/ceremonie-inm.jpg"
+  },
+  {
+    title: "Ajutorul de deces în 2025",
+    slug: "/blog/ajutorul-de-deces-2025",
+    image: "/images/ajutor-deces.jpg"
+  }
+];
+---
+
+<Layout 
+  title={`${articleData.title} - Forever Funeral Home`} 
+  description="Ghid complet pentru identificarea unei agenții funerare profesioniste. Criterii esențiale de selecție și întrebări pe care ar trebui să le adresezi."
+>
+  <!-- Hero section -->
+  <section class="bg-gray-900 text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-40">
+      <img 
+        src={articleData.image} 
+        alt={articleData.title} 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-900/70 to-gray-900"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-2 text-accent mb-4">
+          <span>{articleData.category}</span>
+          <span>•</span>
+          <span>{articleData.date}</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">{articleData.title}</h1>
+        
+        <div class="flex items-center">
+          <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white font-medium mr-3">
+            {articleData.author.split(' ')[0][0]}{articleData.author.split(' ')[1]?.[0] || ''}
+          </div>
+          <span>De {articleData.author}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article content -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <p class="lead">
+            În momentele dificile care urmează pierderii unei persoane dragi, alegerea unei agenții funerare profesioniste poate face diferența între o experiență stresantă și una demnă, plină de respect. Acest ghid vă oferă criteriile esențiale pentru a identifica o agenție de servicii funerare care să răspundă corespunzător nevoilor dumneavoastră.
+          </p>
+          
+          <h2>De ce este importantă alegerea unei agenții funerare profesioniste?</h2>
+          
+          <p>
+            O agenție funerară profesionistă nu doar că se ocupă de aspectele practice ale organizării funeraliilor, ci oferă și sprijin emoțional și consiliere în aceste momente dificile. Alegerea potrivită vă permite să:
+          </p>
+          
+          <ul>
+            <li>Vă concentrați pe procesul de doliu, în timp ce experții se ocupă de detaliile organizatorice</li>
+            <li>Beneficiați de servicii de calitate, la prețuri transparente</li>
+            <li>Onorați memoria celui drag printr-o ceremonie demnă și personalizată</li>
+            <li>Evitați complicațiile administrative și legale</li>
+          </ul>
+          
+          <h2>Criteriile esențiale pentru alegerea unei agenții funerare</h2>
+          
+          <h3>1. Reputația și experiența în domeniu</h3>
+          
+          <p>
+            Înainte de a lua o decizie, este esențial să vă informați despre reputația companiei:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Recenzii și testimoniale</strong> - Verificați opiniile altor familii care au apelat la serviciile agenției.
+            </li>
+            <li>
+              <strong>Experiența în domeniu</strong> - O agenție cu tradiție și experiență va gestiona mai eficient situațiile neprevăzute.
+            </li>
+            <li>
+              <strong>Recomandări</strong> - Întrebați prietenii, rudele sau personalul medical dacă au recomandări.
+            </li>
+          </ul>
+          
+          <h3>2. Gama completă de servicii oferite</h3>
+          
+          <p>
+            O agenție funerară profesionistă ar trebui să ofere un pachet complet de servicii:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Transport funerar</strong> - Preluarea defunctului și transportul la capelă, biserică și cimitir.
+            </li>
+            <li>
+              <strong>Îmbălsămare și pregătire</strong> - Servicii de tanatopraxie profesională.
+            </li>
+            <li>
+              <strong>Documentație</strong> - Asistență în obținerea certificatului de deces și a altor documente.
+            </li>
+            <li>
+              <strong>Organizarea ceremoniei</strong> - Coordonarea tuturor aspectelor legate de slujba religioasă și înmormântare.
+            </li>
+            <li>
+              <strong>Produse funerare</strong> - O gamă variată de sicrie, cruci, coroane și alte accesorii.
+            </li>
+          </ul>
+          
+          <div class="my-8 p-6 bg-gray-50 rounded-lg border-l-4 border-accent">
+            <h4 class="text-xl font-bold mb-3">Sfat util</h4>
+            <p class="mb-0">
+              Alegeți o agenție care poate oferi toate serviciile necesare sub același acoperiș pentru a evita coordonarea între mai mulți furnizori și complicațiile care pot apărea.
+            </p>
+          </div>
+          
+          <h3>3. Transparența prețurilor</h3>
+          
+          <p>
+            Transparența în privința costurilor este un indicator important al profesionalismului:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Liste de prețuri detaliate</strong> - Agenția ar trebui să vă ofere o listă clară cu toate serviciile și produsele împreună cu prețurile aferente.
+            </li>
+            <li>
+              <strong>Fără costuri ascunse</strong> - Toate cheltuielile trebuie explicate în avans, fără surprize ulterioare.
+            </li>
+            <li>
+              <strong>Opțiuni pentru diferite bugete</strong> - O agenție profesionistă oferă pachete adaptate diferitelor posibilități financiare.
+            </li>
+          </ul>
+          
+          <h3>4. Disponibilitate și suport 24/7</h3>
+          
+          <p>
+            Decesul poate surveni oricând, de aceea este esențial ca agenția să fie disponibilă permanent:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Servicii non-stop</strong> - Disponibilitate 24 de ore din 24, 7 zile din 7.
+            </li>
+            <li>
+              <strong>Răspuns prompt</strong> - Capacitatea de a prelua rapid defunctul și de a începe organizarea.
+            </li>
+            <li>
+              <strong>Linie telefonică permanentă</strong> - Posibilitatea de a contacta agenția în orice moment.
+            </li>
+          </ul>
+          
+          <h3>5. Empatia și abordarea personalizată</h3>
+          
+          <p>
+            Un aspect crucial, dar adesea subevaluat, este modul în care personalul agenției interacționează cu familia îndoliată:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Empatie și compasiune</strong> - Personalul trebuie să manifeste înțelegere față de durerea familiei.
+            </li>
+            <li>
+              <strong>Respect pentru tradițiile religioase și culturale</strong> - Capacitatea de a organiza ceremonii conform diferitelor tradiții și confesiuni.
+            </li>
+            <li>
+              <strong>Abordare personalizată</strong> - Fiecare familie și fiecare persoană decedată este unică, iar serviciile trebuie adaptate în consecință.
+            </li>
+          </ul>
+          
+          <h2>Întrebări esențiale de adresat unei agenții funerare</h2>
+          
+          <p>
+            Când contactați o agenție funerară, este recomandat să adresați următoarele întrebări:
+          </p>
+          
+          <ol>
+            <li><strong>Care este gama completă de servicii pe care le oferiți?</strong></li>
+            <li><strong>Puteți furniza o listă detaliată de prețuri pentru toate serviciile și produsele?</strong></li>
+            <li><strong>Aveți experiență în organizarea ceremoniilor conform tradiției noastre religioase?</strong></li>
+            <li><strong>Ce opțiuni de personalizare a ceremoniei sunt disponibile?</strong></li>
+            <li><strong>Care este procesul de obținere a documentelor necesare?</strong></li>
+            <li><strong>Cum procedați în cazul transportului defunctului din alt oraș sau altă țară?</strong></li>
+            <li><strong>Oferiți asistență pentru obținerea ajutorului de deces?</strong></li>
+          </ol>
+          
+          <h2>Semnele unei agenții funerare profesioniste</h2>
+          
+          <p>
+            O agenție funerară profesionistă se distinge prin:
+          </p>
+          
+          <ul>
+            <li>
+              <strong>Facilități adecvate</strong> - Spații curate și bine întreținute pentru pregătirea defunctului și pentru priveghi.
+            </li>
+            <li>
+              <strong>Personal calificat</strong> - Angajați cu pregătire în domeniul serviciilor funerare.
+            </li>
+            <li>
+              <strong>Vehicule specializate</strong> - Dricuri și alte vehicule funerare în stare bună, curate și decente.
+            </li>
+            <li>
+              <strong>Comunicare clară</strong> - Explicații clare despre toate procedurile și costurile.
+            </li>
+            <li>
+              <strong>Respectarea termenelor</strong> - Punctualitate și organizare impecabilă a tuturor etapelor.
+            </li>
+          </ul>
+          
+          <h2>Concluzii</h2>
+          
+          <p>
+            Alegerea unei agenții funerare profesioniste este un pas important în procesul de organizare a unei ceremonii de adio demnă pentru o persoană dragă. Prin evaluarea reputației, a gamei de servicii, a transparenței prețurilor, a disponibilității și a empatiei personalului, puteți identifica agenția care va răspunde cel mai bine nevoilor dumneavoastră în aceste momente dificile.
+          </p>
+          
+          <p>
+            Forever Funeral Home se mândrește cu îndeplinirea tuturor acestor criterii, oferind servicii complete, transparente și personalizate, cu respect și profesionalism. Pentru orice informații sau asistență, nu ezitați să ne contactați la numărul de telefon <a href="tel:0770171711">0770 171 711</a>, disponibil 24/7.
+          </p>
+          
+          <div class="bg-gray-50 p-6 rounded-lg my-8 border-l-4 border-accent">
+            <h3 class="text-xl font-bold mb-2">Recomandare finală</h3>
+            <p class="mb-0">
+              Nu luați o decizie în grabă. Chiar și în aceste momente dificile, este important să vă informați și să alegeți cu atenție agenția funerară. O alegere potrivită vă va ajuta să traversați această perioadă dificilă cu demnitate, oferind un ultim omagiu plin de respect persoanei dragi.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Author and share section -->
+        <div class="mt-12 flex flex-col md:flex-row justify-between items-start md:items-center py-6 border-t border-b border-gray-200">
+          <div class="flex items-center mb-4 md:mb-0">
+            <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-medium mr-4">
+              {articleData.author.split(' ')[0][0]}{articleData.author.split(' ')[1]?.[0] || ''}
+            </div>
+            <div>
+              <div class="font-medium text-gray-900">Scris de</div>
+              <div class="text-gray-600">{articleData.author}</div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="font-medium text-gray-900 mb-2">Distribuie articolul</div>
+            <div class="flex gap-3">
+              <a href="#" class="text-gray-500 hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Related articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-serif font-bold mb-12 text-center text-gray-900">Articole similare</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {relatedPosts.map(post => (
+            <a href={post.slug} class="block group">
+              <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                    width="400"
+                    height="200"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-accent transition-colors">
+                    {post.title}
+                  </h3>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 
