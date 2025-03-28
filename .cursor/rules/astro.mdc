@@ -1,0 +1,33 @@
+---
+description: Rules for Astro 5 project
+globs:
+alwaysApply: true
+---
+
+# Astro 5 Rules
+
+## Project Structure
+- All Astro components should be placed in the `src/components/` directory
+- All pages should be placed in the `src/pages/` directory
+- All layouts should be placed in the `src/layouts/` directory
+- All global styles should be placed in the `src/styles/` directory
+- All assets (images, fonts) should be placed in the `src/assets/` directory
+
+## Naming Conventions
+- Astro component files should use the `.astro` extension
+- Component file names should use PascalCase (e.g. `HeaderNavigation.astro`)
+- Page file names should use kebab-case (e.g. `about-us.astro`)
+
+## Best Practices
+- Use the `client:load` property only when immediate interactivity is necessary
+- Use `client:visible` for components that need to be interactive only when visible
+- Use `client:idle` for components that can wait until the browser is idle
+- Minimize JavaScript sent to the client by using server-side rendering when possible
+- Use `import.meta.env` for environment variables
+- Use `getStaticPaths()` for dynamic route generation
+
+## Astro 5 Specifications
+- Use the new View Transitions system for page transitions
+- Use the Content Collections API for structured content
+- Implement Server Endpoints for APIs and middleware
+- Use the new `<Code />` and `<Prism />` tags for code display

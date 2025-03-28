@@ -1,0 +1,34 @@
+---
+description: Reguli Tailwind 4
+globs:
+alwaysApply: true
+---
+
+## Generale
+- Folosește Tailwind 4 pentru stilizare
+- Evită stiluri CSS personalizate când e posibil
+- Preferă clasele utilitare Tailwind în locul CSS-ului personalizat
+- Folosește noul plugin `@tailwindcss/vite` pentru configurare
+
+## Spații și dimensiuni
+- Folosește clasele de spațiere `gap-x`, `p-x`, `m-x` și `space-x` consistente
+- Definește breakpoint-uri comune pentru responsive design în configurația Tailwind
+- Folosește noul sistem de spațiere arbitary values `p-[10px]` doar când este necesar
+
+## Culori
+- Utilizează schema de culori configurată în `tailwind.config.js`
+- Folosește variabilele CSS pentru culorile de bază
+- Aplicarea temelor dark/light folosind noul sistem de modi din Tailwind 4
+
+## Convenții
+- Organizează clasele în ordinea: Layout, Dimensiuni, Spațiere, Aspect, Stare
+- Folosește componentele de container pentru consistență între pagini
+- În situații complexe, folosește prefixul `group-` și `peer-` pentru interacțiuni legate
+
+## Noi caracteristici Tailwind 4
+- Utilizează noua sintaxă de compunere CSS-ul scris direct în HTML
+- Folosește noul sistem de multi-variant (`md:hover:bg-blue-500`)
+- Implementează theme() funcția în locul extragerii claselor pentru variabile
+- Utilizează noile funcționalități responsive cu container queries
+- Folosește noile elemente interactive pentru hover, focus și alte stări
+- Folosește noile utilități de grid și flex pentru layout

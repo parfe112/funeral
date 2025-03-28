@@ -1,0 +1,109 @@
+---
+const benefits = [
+  {
+    title: "Experiență în domeniu",
+    description: "Cu peste 10 ani de experiență, oferim servicii funerare profesionale și personalizate, adaptate nevoilor fiecărei familii.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>`
+  },
+  {
+    title: "Disponibilitate non-stop",
+    description: "Suntem disponibili 24/7, 365 de zile pe an, pentru a vă oferi asistență și sprijin în orice moment, când aveți cea mai mare nevoie.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
+  },
+  {
+    title: "Personal profesionist",
+    description: "Echipa noastră este formată din profesioniști bine pregătiți, cu experiență în domeniu, care abordează fiecare situație cu empatie și respect.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>`
+  },
+  {
+    title: "Servicii complete",
+    description: "Oferim toate serviciile necesare organizării unei înmormântări, de la pregătirea decedatului până la serviciile de catering pentru pomeni.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+    </svg>`
+  },
+  {
+    title: "Consultanță documente",
+    description: "Vă oferim asistență completă pentru obținerea tuturor documentelor necesare și a ajutorului de înmormântare de la stat.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>`
+  },
+  {
+    title: "Prețuri accesibile",
+    description: "Pachete funerare pentru toate bugetele, inclusiv pachete care permit deducerea integrală a ajutorului de înmormântare.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Text column -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">De ce să alegi serviciile funerare <span class="text-accent">Forever</span>?</h2>
+        
+        <p class="text-lg text-gray-600 mb-8">
+          Ne-am dedicat misiunea pentru a oferi servicii funerare de cea mai înaltă calitate, cu empatie și profesionalism. Ne angajăm să vă sprijinim în aceste momente dificile, preluând toate aspectele organizatorice și oferindu-vă confortul de care aveți nevoie.
+        </p>
+        
+        <div class="space-y-6">
+          {benefits.slice(0, 3).map(benefit => (
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center" set:html={benefit.icon} />
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">{benefit.title}</h3>
+                <p class="text-gray-600">{benefit.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Imagine și alte beneficii -->
+      <div>
+        <div class="rounded-xl overflow-hidden shadow-xl mb-10 relative">
+          <img 
+            src="/images/floare-lumanare.jpg" 
+            alt="Lumânare și floare albă - servicii funerare Forever" 
+            class="w-full h-auto rounded-xl"
+            width="600"
+            height="400"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent flex items-end">
+            <div class="p-6 text-white">
+              <p class="text-lg font-medium">Suntem alături de dumneavoastră 24/7</p>
+              <div class="mt-3 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <a href="tel:0770171711" class="font-medium hover:underline">0770 171 711</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          {benefits.slice(3).map(benefit => (
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center" set:html={benefit.icon} />
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900">{benefit.title}</h3>
+                <p class="text-gray-600">{benefit.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

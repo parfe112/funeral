@@ -1,0 +1,320 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const echipa = [
+  {
+    nume: "Alexandru Popescu",
+    functie: "Director General",
+    descriere: "Cu peste 15 ani de experiență în domeniul serviciilor funerare, Alexandru coordonează întreaga activitate a companiei, asigurându-se că fiecare familie primește servicii de cea mai înaltă calitate.",
+    imagePath: "/images/team/alexandru.jpg"
+  },
+  {
+    nume: "Maria Ionescu",
+    functie: "Director Relații cu Clienții",
+    descriere: "Maria se ocupă de comunicarea cu familiile îndoliate, oferind consiliere și sprijin în momentele dificile. Empatia și dedicarea sa sunt apreciate de toți cei care apelează la serviciile noastre.",
+    imagePath: "/images/team/maria.jpg"
+  },
+  {
+    nume: "Cristian Dumitrescu",
+    functie: "Coordonator Logistică",
+    descriere: "Cristian se ocupă de coordonarea tuturor aspectelor logistice, de la transportul funerar până la organizarea ceremoniilor, asigurând desfășurarea impecabilă a fiecărui serviciu.",
+    imagePath: "/images/team/cristian.jpg"
+  },
+  {
+    nume: "Elena Stancu",
+    functie: "Consultant Servicii Funerare",
+    descriere: "Elena oferă consultanță specializată privind toate aspectele serviciilor funerare, ajutând familiile să ia deciziile potrivite în momentele dificile.",
+    imagePath: "/images/team/elena.jpg"
+  }
+];
+
+const valori = [
+  {
+    titlu: "Respect",
+    descriere: "Tratăm fiecare persoană decedată și fiecare familie îndoliată cu cel mai profund respect și demnitate.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Empatie",
+    descriere: "Înțelegem durerea pierderii unei persoane dragi și oferim sprijin emoțional familiilor în momentele dificile.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Profesionalism",
+    descriere: "Echipa noastră este formată din profesioniști dedicați, pregătiți să ofere servicii de cea mai înaltă calitate.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>`
+  },
+  {
+    titlu: "Transparență",
+    descriere: "Oferim informații clare și prețuri transparente pentru toate serviciile noastre, fără costuri ascunse.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Disponibilitate",
+    descriere: "Suntem disponibili non-stop, 365 de zile pe an, pentru a vă oferi sprijin imediat în momentele dificile.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Tradiție",
+    descriere: "Respectăm tradițiile și obiceiurile religioase și culturale ale fiecărei familii.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+    </svg>`
+  }
+];
+
+const cronologie = [
+  {
+    an: "2005",
+    titlu: "Înființarea companiei",
+    descriere: "Forever Funeral Home a fost înființată cu misiunea de a oferi servicii funerare de calitate, bazate pe respect și empatie."
+  },
+  {
+    an: "2008",
+    titlu: "Extinderea serviciilor",
+    descriere: "Am extins gama de servicii pentru a include transport funerar național și internațional, precum și o gamă variată de produse funerare."
+  },
+  {
+    an: "2012",
+    titlu: "Deschiderea primului birou în București",
+    descriere: "Am deschis primul nostru birou în București, oferind servicii complete de pompe funebre și consultanță."
+  },
+  {
+    an: "2015",
+    titlu: "Modernizarea flotei de transport",
+    descriere: "Am investit în modernizarea flotei de transport funerar, achiziționând vehicule specializate care respectă toate normele sanitare și de siguranță."
+  },
+  {
+    an: "2018",
+    titlu: "Extinderea în Ilfov",
+    descriere: "Ne-am extins serviciile în județul Ilfov, pentru a răspunde cererii crescute din această zonă."
+  },
+  {
+    an: "2020",
+    titlu: "Implementarea serviciilor digitale",
+    descriere: "Am implementat servicii digitale pentru a facilita accesul familiilor la informații și pentru a simplifica procesul de organizare a ceremoniilor funerare."
+  },
+  {
+    an: "2023",
+    titlu: "Renovarea și modernizarea capelei proprii",
+    descriere: "Am renovat și modernizat capela proprie, oferind familiilor un spațiu confortabil și demn pentru ceremoniile de adio."
+  }
+];
+---
+
+<Layout 
+  title="About Us - Forever Funeral Home"
+  description="Learn the story of Forever Funeral Home, our dedicated team and the values that guide us in providing the highest quality funeral services in Bucharest and Ilfov."
+>
+  <!-- Hero section -->
+  <section class="bg-gray-900 text-white py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">Despre Forever Funeral Home</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          O echipă dedicată, cu experiență și empatie, pregătită să vă ofere sprijin în momentele dificile.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About us section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-10 text-gray-900 text-center">Povestea noastră</h2>
+        
+        <div class="md:flex items-start gap-12">
+          <div class="md:w-2/5 mb-8 md:mb-0">
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/sediu.jpg" 
+                alt="Sediul Forever Funeral Home" 
+                class="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+          
+          <div class="md:w-3/5">
+            <p class="text-gray-600 mb-4">
+              Forever Funeral Home a fost înființată în anul 2005, cu dorința de a oferi servicii funerare de calitate, bazate pe respect și empatie față de familiile îndoliate.
+            </p>
+            <p class="text-gray-600 mb-4">
+              De-a lungul anilor, ne-am dezvoltat și ne-am extins serviciile, păstrând mereu aceleași valori care ne-au ghidat de la început: respectul față de persoana decedată și față de familia îndurerată, empatia și profesionalismul.
+            </p>
+            <p class="text-gray-600">
+              Astăzi, Forever Funeral Home este o companie de referință în domeniul serviciilor funerare din București și Ilfov, oferind o gamă completă de servicii și produse funerare de cea mai înaltă calitate.
+            </p>
+          </div>
+        </div>
+        
+        <div class="md:flex items-center gap-16 flex-row-reverse mt-16">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <video 
+                src="/video-magazin.mov" 
+                autoplay
+                loop
+                muted
+                playsinline
+                class="w-full h-full object-cover"
+                width="600"
+                height="400"
+              ></video>
+            </div>
+          </div>
+          
+          <div class="md:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Misiunea noastră</h2>
+            <p class="text-gray-600 mb-4">
+              Misiunea noastră este de a oferi servicii funerare de cea mai înaltă calitate, personalizate conform dorințelor și nevoilor fiecărei familii, cu respect, empatie și profesionalism.
+            </p>
+            <p class="text-gray-600 mb-4">
+              Ne angajăm să fim alături de familiile îndoliate în momentele dificile, oferindu-le sprijin și asistență pentru organizarea unei ceremonii funerare demne, care să onoreze memoria persoanei decedate.
+            </p>
+            <p class="text-gray-600">
+              Suntem dedicați excelenței în serviciile funerare și ne străduim constant să îmbunătățim calitatea serviciilor noastre, pentru a depăși așteptările clienților noștri.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Values section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Valorile noastre</h2>
+        <p class="text-lg text-gray-600">
+          Forever Funeral Home se ghidează după un set de valori fundamentale care ne definesc activitatea și relația cu familiile îndoliate.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {valori.map(valoare => (
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <div class="text-accent mb-4" set:html={valoare.icon} />
+            <h3 class="text-xl font-bold mb-3 text-gray-900">{valoare.titlu}</h3>
+            <p class="text-gray-600">{valoare.descriere}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Timeline section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Cronologia companiei</h2>
+        <p class="text-lg text-gray-600">
+          Povestea dezvoltării Forever Funeral Home de-a lungul anilor.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <!-- Vertical line -->
+          <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-accent/20 transform md:translateX(-0.5px)"></div>
+          
+          {cronologie.map((eveniment, idx) => (
+            <div class={`flex md:items-center flex-col mb-12 relative ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <div class="md:w-1/2 flex flex-col items-start md:pr-8">
+                <div class={`flex items-center mb-4 ${idx % 2 === 0 ? 'md:justify-end' : ''} w-full`}>
+                  <div class={`absolute left-0 md:left-1/2 transform md:translate-x(-50%) w-4 h-4 rounded-full bg-accent border-4 border-white shadow-md z-10`}></div>
+                  <div class="ml-8 md:ml-0">
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium">{eveniment.an}</span>
+                  </div>
+                </div>
+                <div class={`ml-8 md:ml-0 ${idx % 2 === 0 ? 'md:text-right' : ''}`}>
+                  <h3 class="text-xl font-bold mb-2 text-gray-900">{eveniment.titlu}</h3>
+                  <p class="text-gray-600">{eveniment.descriere}</p>
+                </div>
+              </div>
+              <div class="md:w-1/2"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Team section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Echipa noastră</h2>
+        <p class="text-lg text-gray-600">
+          O echipă dedicată de profesioniști, pregătită să vă ofere sprijin și asistență în momentele dificile.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {echipa.map(membru => (
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+            <div class="aspect-square relative bg-gray-200">
+              <img 
+                src={membru.imagePath} 
+                alt={`Fotografie ${membru.nume}`} 
+                class="w-full h-full object-cover"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-1 text-gray-900">{membru.nume}</h3>
+              <p class="text-accent font-medium mb-4">{membru.functie}</p>
+              <p class="text-gray-600 text-sm">{membru.descriere}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA section -->
+  <section class="py-16 bg-accent/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-serif font-bold mb-6 text-gray-900">Aveți nevoie de asistență?</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Echipa Forever Funeral Home este disponibilă non-stop pentru a vă oferi sprijin și asistență în momentele dificile.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/contact" 
+            class="btn btn-primary bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md font-medium inline-flex items-center justify-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            </svg>
+            <span>Contactați-ne</span>
+          </a>
+          
+          <a 
+            href="tel:0770171711" 
+            class="btn btn-outline border border-gray-400 bg-white text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md font-medium inline-flex items-center justify-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            <span>Apelați acum: 0770 171 711</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 

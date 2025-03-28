@@ -1,14 +1,66 @@
-<!doctype html>
-<html lang="en">
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Forever Funeral Home - Premium Funeral Services",
+	description = "Forever Funeral Home oferă servicii funerare complete în București și Ilfov. Suntem alături de dumneavoastră în momentele dificile cu profesionalism și empatie."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ro">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		
+		<title>{title}</title>
+		
+		<style is:global>
+			/* Fonturi personalizate */
+			body {
+				font-family: 'Raleway', sans-serif;
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+				font-family: 'Playfair Display', serif;
+			}
+		</style>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen flex flex-col">
+		<Navbar />
+		
+		<main class="flex-grow">
+			<slot />
+		</main>
+		
+		<Footer />
+		
+		<script>
+			// Script pentru smooth scroll
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					
+					document.querySelector(this.getAttribute('href')).scrollIntoView({
+						behavior: 'smooth'
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
 

@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const servicii = [
+  {
+    titlu: "Transport local (București și Ilfov)",
+    descriere: "Transport funerar în București și județul Ilfov, cu autospeciale moderne, climatizate și autorizate conform normelor în vigoare.",
+    preturi: [
+      "București: de la 500 lei",
+      "Ilfov: de la 700 lei"
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+    </svg>`
+  },
+  {
+    titlu: "Transport național",
+    descriere: "Transport funerar în toate localitățile din România, cu asistență completă și respectarea tuturor normelor sanitare și legale.",
+    preturi: [
+      "Tarif de bază: de la 2.5 lei/km",
+      "Tarif distanță lungă (peste 300 km): de la 2.2 lei/km"
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Transport internațional și repatrieri",
+    descriere: "Servicii de repatriere a persoanelor decedate din străinătate către România sau transport internațional din România către alte țări.",
+    preturi: [
+      "Europa: de la 1.2 €/km",
+      "Alte destinații: în funcție de particularitățile cazului"
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Transport sicrie goale",
+    descriere: "Transport de sicrie goale către locațiile indicate de client, pentru cazurile în care familia dorește să folosească un sicriu propriu.",
+    preturi: [
+      "București și Ilfov: de la 300 lei",
+      "Național: de la 1.5 lei/km"
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+    </svg>`
+  }
+];
+
+const avantaje = [
+  {
+    titlu: "Flotă modernă",
+    descriere: "Dispunem de autospeciale funerare moderne, climatizate și dezinfectate după fiecare transport.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>`
+  },
+  {
+    titlu: "Disponibilitate non-stop",
+    descriere: "Serviciile noastre de transport funerar sunt disponibile 24/7, 365 zile pe an.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Personal calificat",
+    descriere: "Echipa noastră este formată din profesioniști cu experiență, care tratează fiecare caz cu respect și empatie.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Asistență completă",
+    descriere: "Oferim asistență pentru toate documentele necesare transportului funerar, atât național cât și internațional.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>`
+  },
+  {
+    titlu: "Tarife transparente",
+    descriere: "Prețuri clare și transparente, fără costuri ascunse. Ofertă personalizată pentru fiecare situație.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`
+  },
+  {
+    titlu: "Respectarea reglementărilor",
+    descriere: "Toate serviciile respectă normele sanitare și legale în vigoare pentru transportul persoanelor decedate.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>`
+  }
+];
+
+const intrebari = [
+  {
+    intrebare: "Ce documente sunt necesare pentru transportul funerar național?",
+    raspuns: "Pentru transportul funerar național sunt necesare: certificatul constatator al decesului, copia actului de identitate al decedatului, adeverința de înhumare și certificatul de îmbălsămare. Echipa Forever Funeral Home vă poate asista în obținerea tuturor documentelor necesare."
+  },
+  {
+    intrebare: "Ce documente sunt necesare pentru repatrierea unei persoane decedate în străinătate?",
+    raspuns: "Pentru repatrierea unei persoane decedate din străinătate sunt necesare mai multe documente, printre care: certificatul de deces eliberat de autoritățile străine, certificatul de îmbălsămare, avizul sanitar de transport, pașaportul mortuar, declarația consulară, etc. Echipa noastră vă oferă asistență completă pentru obținerea și pregătirea tuturor documentelor necesare."
+  },
+  {
+    intrebare: "Cât durează transportul funerar internațional?",
+    raspuns: "Durata transportului funerar internațional depinde de mai mulți factori, precum distanța, mijlocul de transport utilizat (terestru, aerian), timpul necesar pentru obținerea documentelor, etc. În general, pentru destinațiile din Europa, transportul terestru durează între 1-3 zile, iar cel aerian 1-2 zile, plus timpul necesar pentru formalitățile documentare."
+  },
+  {
+    intrebare: "Oferiți servicii de transport funerar pentru persoane decedate în urma unor boli infecțioase?",
+    raspuns: "Da, oferim servicii de transport funerar și pentru persoanele decedate în urma unor boli infecțioase, respectând toate normele sanitare și legale speciale aplicabile în aceste cazuri. Autospecialele noastre sunt echipate corespunzător, iar personalul este instruit pentru a gestiona astfel de situații în deplină siguranță."
+  }
+];
+---
+
+<Layout 
+  title="Transport Funerar - Forever Funeral Home" 
+  description="Servicii profesionale de transport funerar local, național și internațional oferite de Forever Funeral Home. Repatrieri, transport sicrie și asistență completă."
+>
+  <!-- Hero section -->
+  <section class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">Transport Funerar</h1>
+        <p class="text-xl text-gray-300">
+          Oferim servicii profesionale de transport funerar local, național și internațional, cu respectarea tuturor normelor sanitare și legale în vigoare.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicii section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Servicii de Transport</h2>
+        <p class="text-lg text-gray-600">
+          Forever Funeral Home vă oferă servicii complete de transport funerar, adaptate nevoilor dumneavoastră, cu profesionalism și respect.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {servicii.map((serviciu) => (
+          <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-100 p-6 transition hover:shadow-md">
+            <div class="flex items-center mb-4">
+              <div class="text-primary-600 mr-4" set:html={serviciu.icon} />
+              <h3 class="text-2xl font-serif font-bold text-gray-900">{serviciu.titlu}</h3>
+            </div>
+            
+            <p class="text-gray-600 mb-4">{serviciu.descriere}</p>
+            
+            <div class="bg-white rounded-lg p-4 border border-gray-100">
+              <h4 class="font-medium text-gray-900 mb-2">Tarife orientative:</h4>
+              <ul class="space-y-1">
+                {serviciu.preturi.map((pret) => (
+                  <li class="flex items-start">
+                    <span class="text-primary-600 mr-2 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span class="text-gray-700">{pret}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="text-sm text-gray-500 mt-2">* Prețurile pot varia în funcție de specificul fiecărui caz.</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Flota noastră section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Flota Noastră</h2>
+        <p class="text-lg text-gray-600">
+          Dispunem de o flotă modernă de vehicule funerare, adaptate diverselor nevoi de transport funerar, toate respectând standardele sanitare și de siguranță.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="h-64 overflow-hidden">
+            <img 
+              src="/images/masina-mica.jpg" 
+              alt="Mercedes pentru transport funerar" 
+              class="w-full h-full object-cover transition-transform hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-gray-900">Mercedes Limuzină Funerară</h3>
+            <p class="text-gray-600">
+              Limuzină funerară elegantă, ideală pentru transportul decedatului, cu spațiu și pentru familia acestuia. Perfectă pentru ceremonii funerare tradiționale în București și Ilfov.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="h-64 overflow-hidden">
+            <img 
+              src="/images/duba.jpg" 
+              alt="Autoutilitară pentru transport funerar" 
+              class="w-full h-full object-cover transition-transform hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-gray-900">Autoutilitară Funerară</h3>
+            <p class="text-gray-600">
+              Vehicul specializat pentru transportul funerar pe distanțe medii și lungi, inclusiv repatrieri internaționale. Oferă condiții optime conform tuturor normelor sanitare în vigoare.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="h-64 overflow-hidden">
+            <img 
+              src="/images/jeep.jpg" 
+              alt="SUV pentru transport funerar" 
+              class="w-full h-full object-cover transition-transform hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-gray-900">Renault SUV</h3>
+            <p class="text-gray-600">
+              Vehicul versatil pentru transport funerar, ideal pentru accesul în zone mai dificile sau pentru transportul florilor și coroanelor. Oferă confort și siguranță în orice condiții.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Avantaje section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">De ce să alegeți Forever Funeral Home</h2>
+        <p class="text-lg text-gray-600">
+          Oferim servicii de transport funerar de înaltă calitate, bazate pe profesionalism, respect și atenție la detalii.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {avantaje.map((avantaj) => (
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 p-6 transition hover:shadow-md">
+            <div class="text-primary-600 mb-4" set:html={avantaj.icon} />
+            <h3 class="text-xl font-bold mb-2 text-gray-900">{avantaj.titlu}</h3>
+            <p class="text-gray-600">{avantaj.descriere}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Proces section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Cum funcționează</h2>
+        <p class="text-lg text-gray-600">
+          Procesul de organizare a transportului funerar este simplu și eficient cu Forever Funeral Home.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-xl p-6 text-center">
+            <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Contactați-ne</h3>
+            <p class="text-gray-600">Sunați-ne la numărul de telefon disponibil non-stop sau completați formularul de contact de pe site.</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-6 text-center">
+            <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Stabilim detaliile</h3>
+            <p class="text-gray-600">Discutăm despre nevoile dumneavoastră și stabilim toate detaliile transportului (locație, dată, oră, etc).</p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-xl p-6 text-center">
+            <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Realizăm transportul</h3>
+            <p class="text-gray-600">Ne ocupăm de toate aspectele transportului funerar, inclusiv documentația necesară și formalitățile legale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Întrebări Frecvente</h2>
+        <p class="text-lg text-gray-600">
+          Răspunsuri la cele mai frecvente întrebări despre serviciile noastre de transport funerar.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          {intrebari.map((item) => (
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <h3 class="text-xl font-bold mb-3 text-gray-900">{item.intrebare}</h3>
+              <p class="text-gray-600">{item.raspuns}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to action -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Aveți nevoie de transport funerar?</h2>
+        <p class="text-xl mb-8">
+          Echipa Forever Funeral Home vă stă la dispoziție non-stop pentru a vă oferi servicii de transport funerar profesionale.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="/contact" class="inline-flex items-center justify-center bg-white text-primary-600 py-3 px-6 rounded-md hover:bg-gray-100 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contactați-ne
+          </a>
+          <a href="tel:0770171711" class="inline-flex items-center justify-center bg-primary-700 text-white py-3 px-6 rounded-md hover:bg-primary-800 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            0770 171 711
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 

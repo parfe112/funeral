@@ -1,0 +1,43 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Reguli generale pentru proiect Forever
+
+## Structura proiectului
+- Proiectul este construit cu Astro 5 și Tailwind 4
+- Toate componentele frontend se află în directorul `src/components/`
+- Toate paginile se află în directorul `src/pages/`
+- Toate layout-urile se află în directorul `src/layouts/`
+- Assets se află în directorul `src/assets/`
+
+## Stilizare
+- Folosește Tailwind 4 pentru stilizare
+- Evită CSS scris manual când este posibil
+- Folosește variabile CSS pentru valori reutilizabile
+
+## Codare
+- Folosește TypeScript pentru type safety
+- Ai grijă la performance când utilizezi JavaScript pe client
+- Preferă renderizarea pe server (SSR) când este posibil
+- Folosește View Transitions pentru animații între pagini
+
+## Best Practices
+- Urmărește principiile de accesibilitate (WAI-ARIA)
+- Optimizează imaginile și assets-urile pentru performance
+- Folosește lazy loading pentru componente și imagini
+- Utilizează Content Collections pentru conținut structurat
+- Implementează SEO pentru toate paginile
+
+## Convenții de denumire
+- PascalCase pentru componente (ex. `HeaderNavigation.astro`)
+- kebab-case pentru pagini și fișiere de layout (ex. `about-us.astro`)
+- camelCase pentru funcții și variabile
+- UPPERCASE pentru constante
+
+---
+description:
+globs:
+alwaysApply: true
+---

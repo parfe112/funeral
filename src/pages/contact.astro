@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const meta = {
+  title:"Contact - Forever Funeral Home",
+  description:"Contactați Forever Funeral Home pentru servicii funerare de calitate în București și Ilfov. Disponibilitate non-stop 24/7."
+}
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <div class="container mx-auto px-4 py-12 md:py-20">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">Contactați-ne</h1>
+      <p class="text-lg text-gray-600 mb-12">
+        Înțelegem că pierderea unei persoane dragi este un moment dificil. Suntem alături de dumneavoastră 24 din 24, 7 zile din 7, pentru a vă oferi ajutor și îndrumare. Nu ezitați să ne contactați pentru orice fel de informații legate de serviciile noastre funerare.
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact information -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold mb-6 text-gray-900">Informații de contact</h2>
+          
+          <div class="space-y-6 mb-10">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900 mb-1">Adresă</h3>
+                <p class="text-gray-600">
+                  Calea Bucuresti 34D<br>
+                  București, România
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900 mb-1">Telefon (non-stop)</h3>
+                <p class="text-gray-600 mb-1">
+                  <a href="tel:0770171711" class="hover:text-accent transition">0770 171 711</a>
+                </p>
+                <p class="text-gray-600">
+                  <a href="tel:0771171711" class="hover:text-accent transition">0771 171 711</a>
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start mb-8">
+              <div class="flex-shrink-0 mt-1">
+                <svg class="w-6 h-6 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <h4 class="text-lg font-medium text-gray-900">Email</h4>
+                <p class="text-gray-600">funerareserv@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900 mb-1">Program</h3>
+                <p class="text-gray-600">Disponibil 24/7</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Găsiți-ne pe hartă</h3>
+            <div class="rounded-lg overflow-hidden shadow-md h-80">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2850.069022236014!2d26.0936873!3d44.4272293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff7a9e5c32c1%3A0xc2e3775f5a43f518!2sCalea%20Bucure%C8%99ti%2034D%2C%20Bucure%C8%99ti!5e0!3m2!1sro!2sro!4v1654321234567!5m2!1sro!2sro" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact form -->
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <h2 class="text-2xl md:text-3xl font-serif font-bold mb-6 text-gray-900">Trimite-ne un mesaj</h2>
+          
+          <form class="space-y-5">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nume și prenume</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" placeholder="Numele dvs. complet" required>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Adresa de email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" placeholder="Adresa dvs. de email" required>
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Număr de telefon</label>
+              <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" placeholder="Numărul dvs. de telefon" required>
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subiect</label>
+              <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" placeholder="Subiectul mesajului">
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesaj</label>
+              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500" placeholder="Detaliile mesajului dvs." required></textarea>
+            </div>
+            
+            <div>
+              <button type="submit" class="w-full bg-primary hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-md transition">
+                Trimite mesajul
+              </button>
+            </div>
+          </form>
+          
+          <div class="text-center md:text-left">
+            <p class="text-gray-500 mb-4">Preferați să ne trimiteți un email?</p>
+            <a href="mailto:funerareserv@gmail.com" class="inline-flex items-center justify-center bg-white text-primary-600 border border-primary-600 py-3 px-6 rounded-md hover:bg-gray-50 transition mt-2">
+              <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              funerareserv@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout> 

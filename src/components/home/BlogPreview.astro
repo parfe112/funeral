@@ -1,0 +1,84 @@
+---
+const blogPosts = [
+  {
+    title: "Cum să pregătești ceremonia de înmormântare",
+    excerpt: "Organizarea unei ceremonii de înmormântare poate fi o sarcină copleșitoare în momente dificile. Acest ghid vă ajută să planificați fiecare aspect, de la alegerea siciului până la coordonarea serviciului religios.",
+    image: "/images/blog-1.jpg",
+    date: "15 Mai 2023",
+    slug: "/blog/cum-sa-pregatesti-ceremonia-de-inmormantare"
+  },
+  {
+    title: "Ajutorul de deces în 2024. De la 1 ianuarie ajutorul de înmormântare oferit de stat a crescut semnificativ",
+    excerpt: "Află care este valoarea ajutorului de înmormântare în 2024, cine poate beneficia de acesta și care sunt documentele necesare pentru a obține acest ajutor financiar oferit de stat.",
+    image: "/images/blog-2.jpg",
+    date: "10 Ianuarie 2024",
+    slug: "/blog/ajutorul-de-deces-2024"
+  },
+  {
+    title: "Cum alegi o agenție profesionistă de servicii funerare?",
+    excerpt: "Alegerea unei agenții funerare potrivite este esențială pentru a asigura un serviciu de calitate în momente dificile. Aflați care sunt criteriile importante de luat în considerare și ce întrebări să adresați.",
+    image: "/images/blog-3.jpg",
+    date: "28 Februarie 2024",
+    slug: "/blog/cum-alegi-agentie-funerara-profesionista"
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-gray-900">Articole și Sfaturi</h2>
+      <p class="text-lg text-gray-600">
+        Informații utile despre procesul de înmormântare, aspecte legale și sfaturi pentru familiile îndoliate.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {blogPosts.map(post => (
+        <article class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg transition-shadow flex flex-col h-full">
+          <div class="relative">
+            <img 
+              src={post.image} 
+              alt={post.title} 
+              class="w-full h-48 object-cover"
+              width="400"
+              height="200"
+              loading="lazy"
+            />
+            <div class="absolute top-4 left-4 bg-accent/90 text-white text-xs px-3 py-1 rounded-full">
+              {post.date}
+            </div>
+          </div>
+          
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold mb-3 text-gray-900">
+              <a href={post.slug} class="hover:text-accent transition-colors">
+                {post.title}
+              </a>
+            </h3>
+            
+            <p class="text-gray-600 mb-4 flex-grow">
+              {post.excerpt}
+            </p>
+            
+            <a href={post.slug} class="mt-auto inline-flex items-center text-accent font-medium">
+              <span>Citește mai mult</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <a href="/blog" class="btn btn-outline border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md font-medium transition inline-flex items-center gap-2">
+        <span>Vizitează blogul nostru</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section> 

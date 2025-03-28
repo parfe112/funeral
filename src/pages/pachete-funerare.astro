@@ -1,0 +1,257 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pacheteFunerare = [
+  {
+    title: "Pachet Funerare Standard",
+    price: "4,500 lei",
+    description: "Un pachet complet ce acoperă toate nevoile de bază pentru o ceremonie demnă.",
+    features: [
+      "Sicriu din lemn de esență moale",
+      "Cruce din lemn cu inscripție",
+      "Îmbrăcăminte pentru defunct",
+      "Transport funerar în București",
+      "Obținerea certificatului de deces",
+      "Pregătirea decedatului",
+      "Pregătirea gropii",
+      "Servicii de înhumare",
+      "Coroană din flori naturale"
+    ],
+    note: "Se poate achita din ajutorul de înmormântare",
+    popular: false
+  },
+  {
+    title: "Pachet Funerare Premium",
+    price: "8,620 lei",
+    description: "Un pachet complet ce acoperă toate aspectele înmormântării, cu servicii de calitate superioară.",
+    features: [
+      "Sicriu din lemn de stejar cu interior căptușit",
+      "Cruce din lemn de stejar cu inscripție",
+      "Set complet de îmbrăcăminte pentru defunct",
+      "Transport funerar în România",
+      "Obținerea tuturor documentelor necesare",
+      "Pregătirea și îmbălsămarea decedatului",
+      "Pregătirea gropii",
+      "Servicii de înhumare",
+      "Două coroane din flori naturale",
+      "Lumânări și prosoape pentru ceremonie",
+      "Asistență pentru slujbă",
+      "Organizare pomană"
+    ],
+    note: "Se poate deconta integral din ajutorul de înmormântare",
+    popular: true
+  },
+  {
+    title: "Pachet Funerare Deluxe",
+    price: "12,800 lei",
+    description: "Cel mai complet pachet de servicii funerare, cu atenție la fiecare detaliu, pentru un omagiu perfect.",
+    features: [
+      "Sicriu din lemn de stejar masiv cu finisaje de lux",
+      "Cruce din stejar sculptat cu inscripție",
+      "Set complet de îmbrăcăminte de calitate superioară",
+      "Transport funerar în România și Europa",
+      "Gestionarea tuturor aspectelor administrative",
+      "Pregătirea și îmbălsămarea specială a decedatului",
+      "Amenajarea capelei pentru priveghi",
+      "Pregătirea gropii cu ornamente",
+      "Servicii de înhumare cu asistență completă",
+      "Trei coroane premium din flori naturale",
+      "Set complet de lumânări decorative",
+      "Asistență pentru slujbă și priveghi",
+      "Organizare pomană pentru 50 de persoane",
+      "Suport emoțional pentru familie"
+    ],
+    note: "Se acceptă plata în rate, fără dobândă",
+    popular: false
+  },
+  {
+    title: "Pachet Funerare Social",
+    price: "0 lei",
+    description: "Pachet dedicat persoanelor cu posibilități financiare reduse, ce oferă servicii de bază pentru o înmormântare demnă.",
+    features: [
+      "Sicriu standard",
+      "Cruce simplă din lemn",
+      "Îmbrăcăminte de bază pentru defunct",
+      "Transport funerar în București",
+      "Obținerea certificatului de deces",
+      "Pregătirea decedatului",
+      "Pregătirea gropii",
+      "Servicii de înhumare"
+    ],
+    note: "Gratuit pentru cazuri sociale, cu documente justificative",
+    popular: false
+  }
+];
+---
+
+<Layout 
+  title="Pachete Funerare - Forever Funeral Home"
+  description="Pachete funerare complete adaptate nevoilor și bugetului dvs. de la Forever Funeral Home. Servicii funerare de calitate în București și Ilfov."
+>
+  <!-- Hero section -->
+  <section class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">Pachete Funerare</h1>
+        <p class="text-xl text-gray-300">
+          Oferim pachete funerare complete, adaptate nevoilor și bugetului dumneavoastră, pentru a vă ușura momentele dificile.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Pachete Disponibile</h2>
+        <p class="text-lg text-gray-600">
+          Forever Funeral Home vă oferă pachete funerare complete, personalizabile în funcție de necesități și preferințe.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {pacheteFunerare.map(pachet => (
+          <div class={`bg-white rounded-xl shadow-md overflow-hidden border ${pachet.popular ? 'border-accent' : 'border-gray-200'} flex flex-col h-full relative`}>
+            {pachet.popular && (
+              <div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                Recomandat
+              </div>
+            )}
+            
+            <div class="p-6 pb-4">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">{pachet.title}</h3>
+              <p class="text-xl font-bold text-accent mb-4">{pachet.price}</p>
+              <p class="text-gray-600 mb-6">{pachet.description}</p>
+            </div>
+            
+            <div class="px-6 pb-6 flex-grow">
+              <h4 class="font-medium text-gray-900 mb-4">Servicii incluse:</h4>
+              <ul class="space-y-2">
+                {pachet.features.map(feature => (
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent shrink-0 mt-0.5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-gray-600">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="px-6 pb-6">
+              {pachet.note && (
+                <p class="text-sm bg-gray-50 rounded-lg p-3 mb-4 text-gray-600 italic">
+                  Notă: {pachet.note}
+                </p>
+              )}
+              
+              <a 
+                href="/contact" 
+                class={`w-full block text-center py-3 px-4 rounded-md font-medium ${pachet.popular ? 'bg-accent hover:bg-accent/90 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'} transition-colors`}
+              >
+                Solicită informații
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-16 bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Personalizați pachetul dumneavoastră</h2>
+        <p class="text-gray-600 mb-6">
+          Înțelegem că fiecare situație este unică. Puteți personaliza oricare dintre pachetele noastre pentru a se potrivi nevoilor și dorințelor dumneavoastră. Contactați-ne pentru a discuta despre opțiunile disponibile și pentru a crea un pachet personalizat.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a 
+            href="/contact" 
+            class="inline-flex items-center justify-center bg-white text-primary-600 py-3 px-6 rounded-md hover:bg-gray-100 transition"
+          >
+            <span>Contactați-ne pentru detalii</span>
+          </a>
+          <a 
+            href="tel:0770171711" 
+            class="inline-flex items-center justify-center bg-primary-600 text-white py-3 px-6 rounded-md hover:bg-primary-700 transition"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>0770 171 711</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-12 text-center text-gray-900">Întrebări Frecvente</h2>
+      
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Ce este ajutorul de înmormântare și cum îl pot obține?</h3>
+          <p class="text-gray-600">
+            Ajutorul de înmormântare este o sumă de bani acordată de stat pentru a acoperi o parte din cheltuielile de înmormântare. În 2024, valoarea acestuia este de 8.620 lei. Pentru a-l obține, trebuie să depuneți o cerere la Casa de Pensii, însoțită de certificatul de deces, acte de identitate și documente care atestă cheltuielile de înmormântare. Noi vă oferim asistență completă pentru obținerea acestui ajutor.
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Cât durează organizarea unei înmormântări?</h3>
+          <p class="text-gray-600">
+            În general, o înmormântare poate fi organizată în 2-3 zile de la momentul decesului. Acest timp poate varia în funcție de diverse circumstanțe, precum obținerea documentelor necesare sau pregătirea locului de înhumare. Echipa noastră se asigură că toate aspectele sunt gestionate rapid și eficient, pentru a reduce la minimum timpul de așteptare.
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Pot personaliza pachetele funerare?</h3>
+          <p class="text-gray-600">
+            Da, toate pachetele noastre funerare pot fi personalizate conform dorințelor și bugetului dumneavoastră. Puteți adăuga sau elimina servicii pentru a crea pachetul care se potrivește cel mai bine nevoilor dumneavoastră. Contactați-ne pentru a discuta despre opțiunile disponibile.
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Oferiți servicii funerare în afara Bucureștiului?</h3>
+          <p class="text-gray-600">
+            Da, oferim servicii funerare complete în București și în împrejurimi, inclusiv în județul Ilfov. Pentru locații mai îndepărtate, vă rugăm să ne contactați pentru a discuta despre opțiunile disponibile și eventualele costuri suplimentare.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to action -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Suntem aici pentru dumneavoastră</h2>
+        <p class="text-xl mb-8">
+          Echipa Forever Funeral Home vă stă la dispoziție 24/7 pentru a vă oferi sprijin și asistență în momentele dificile.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a 
+            href="/contact" 
+            class="btn btn-primary bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md font-medium inline-flex items-center justify-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            </svg>
+            <span>Contactați-ne pentru detalii</span>
+          </a>
+          
+          <a 
+            href="tel:0770171711" 
+            class="btn btn-outline border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md font-medium inline-flex items-center justify-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            <span>Apelați acum: 0770 171 711</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 

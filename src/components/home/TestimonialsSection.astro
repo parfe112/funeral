@@ -1,0 +1,78 @@
+---
+const testimonials = [
+  {
+    name: "Elena Mihalache",
+    location: "București",
+    text: "Le sunt recunoscătoare echipei Forever pentru promptitudinea și seriozitatea demonstrată pe tot parcursul organizării evenimentului nefericit prin care am trecut. Mi-au pus la dispoziție toate serviciile necesare pentru pregătirea și desfășurarea înmormântării în cele mai bune condiții. Recomand tuturor să apeleze cu încredere la firma Forever!",
+    avatar: "/images/testimonial-1.jpg"
+  },
+  {
+    name: "Emilia Vasilescu",
+    location: "București",
+    text: "În organizarea înmormântării bunicii mele, cei de la firma Forever mi-au oferit cele mai potrivite soluții și sfaturi ținând cont de cerințele pe care le-am avut. Implicarea, profesionalismul și corectitudinea de care au dat dovadă sunt calitățile care descriu cel mai bine echipa. Un alt lucru de apreciat este disponibilitatea lor de a răspunde la solicitări indiferent de oră.",
+    avatar: "/images/testimonial-2.jpg"
+  },
+  {
+    name: "Maria S.",
+    location: "București",
+    text: "La pierderea unui membru important al familiei mele, am apelat la firma Forever pentru a ne ajuta în pregătirea evenimentului trist. Apreciez foarte mult faptul că cei de la Forever și-au dat interesul să îmi ofere sprijin în organizare: de la obținerea documentelor, alegerea pachetului de înmormântare potrivit dorințelor noastre și până la desfășurarea efectivă a înmormântării.",
+    avatar: "/images/testimonial-3.jpg"
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 text-gray-900">Ce spun clienții despre noi</h2>
+      <p class="text-lg text-gray-600">
+        Ne bucurăm să putem oferi sprijin real familiilor în momentele dificile. Iată ce spun clienții noștri despre serviciile noastre.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map(testimonial => (
+        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col">
+          <!-- Quote icon -->
+          <div class="text-accent mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"/>
+            </svg>
+          </div>
+          
+          <!-- Testimonial Text -->
+          <p class="text-gray-600 mb-6 flex-grow">
+            {testimonial.text}
+          </p>
+          
+          <!-- Author info -->
+          <div class="mt-auto flex items-center">
+            <div class="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-200">
+              <img 
+                src={testimonial.avatar} 
+                alt={`Imagine ${testimonial.name}`} 
+                class="w-full h-full object-cover"
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900">{testimonial.name}</h4>
+              <p class="text-sm text-gray-500">{testimonial.location}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <a href="/testimoniale" class="text-accent hover:text-accent/80 font-medium inline-flex items-center transition-colors">
+        <span>Vezi toate testimonialele</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section> 

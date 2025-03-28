@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categorii = [
+  {
+    nume: "Sicrie",
+    descriere: "Oferim o gamă variată de sicrie din diferite esențe de lemn, de la modele simple până la sicrie de lux, toate realizate cu atenție la detalii.",
+    imagine: "/images/products/sicrie.jpg",
+    produse: [
+      "Sicrie din rășinoase",
+      "Sicrie din esențe tari (stejar, nuc, cireș)",
+      "Sicrie capitonate",
+      "Sicrie sculptate",
+      "Sicrie cu sticlă"
+    ]
+  },
+  {
+    nume: "Cruci",
+    descriere: "Cruci funerare din diferite materiale și dimensiuni, pentru toate confesiunile religioase.",
+    imagine: "/images/products/cruci.jpg",
+    produse: [
+      "Cruci din lemn de rășinoase",
+      "Cruci din stejar",
+      "Cruci metalice",
+      "Cruci sculptate",
+      "Cruci cu ornamente"
+    ]
+  },
+  {
+    nume: "Coroane și jerbe",
+    descriere: "Aranjamente florale funerare realizate din flori naturale sau artificiale, personalizate conform dorințelor.",
+    imagine: "/images/products/coroane.jpg",
+    produse: [
+      "Coroane din flori naturale",
+      "Coroane din flori artificiale",
+      "Jerbe funerare",
+      "Buchete funerare",
+      "Aranjamente pentru sicriu"
+    ]
+  },
+  {
+    nume: "Îmbrăcăminte pentru defunct",
+    descriere: "Îmbrăcăminte specială pentru persoanele decedate, adaptată pentru înmormântare, disponibilă în diferite mărimi și modele.",
+    imagine: "/images/products/imbracaminte.jpg",
+    produse: [
+      "Costume pentru bărbați",
+      "Rochii și costume pentru femei",
+      "Cămăși și bluze",
+      "Lenjerie",
+      "Încălțăminte"
+    ]
+  },
+  {
+    nume: "Lumânări funerare",
+    descriere: "Lumânări de diferite dimensiuni și modele pentru priveghi și înmormântare.",
+    imagine: "/images/products/lumanari.jpg",
+    produse: [
+      "Lumânări pentru priveghi",
+      "Lumânări pentru înmormântare",
+      "Lumânări decorative",
+      "Sfeșnice",
+      "Candele"
+    ]
+  },
+  {
+    nume: "Accesorii funerare",
+    descriere: "Diverse accesorii necesare pentru ceremoniile funerare, de la prosoape și batiste, până la cele mai mici detalii.",
+    imagine: "/images/products/accesorii.jpg",
+    produse: [
+      "Prosoape funerare",
+      "Batiste",
+      "Perne pentru sicriu",
+      "Obiecte religioase",
+      "Cărți de condoleanțe"
+    ]
+  }
+];
+---
+
+<Layout 
+  title="Produse Funerare - Forever Funeral Home" 
+  description="Produse funerare de calitate de la Forever Funeral Home. Sicrie, coroane, cruci și accesorii funerare la prețuri accesibile."
+>
+  <!-- Hero section -->
+  <section class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">Produse Funerare</h1>
+        <p class="text-xl text-gray-300">
+          Oferim o gamă completă de produse funerare de calitate, pentru a vă ajuta să organizați o ceremonie demnă.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorii produse -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-gray-900">Categorii de Produse</h2>
+        <p class="text-lg text-gray-600">
+          Forever Funeral Home vă oferă produse funerare de cea mai înaltă calitate, adaptate pentru toate bugetele și preferințele.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {categorii.map((categorie) => (
+          <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden border border-gray-100 transition hover:shadow-md">
+            <div class="aspect-video relative overflow-hidden">
+              <img 
+                src={categorie.imagine} 
+                alt={`Produse funerare: ${categorie.nume}`} 
+                class="w-full h-full object-cover transition duration-500 hover:scale-105"
+                width="600"
+                height="400"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-serif font-bold mb-3 text-gray-900">{categorie.nume}</h3>
+              <p class="text-gray-600 mb-4">{categorie.descriere}</p>
+              
+              <div class="mb-6">
+                <h4 class="font-medium text-gray-900 mb-2">Produse disponibile:</h4>
+                <ul class="space-y-1">
+                  {categorie.produse.map((produs) => (
+                    <li class="flex items-start">
+                      <span class="text-primary-600 mr-2 mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span class="text-gray-700">{produs}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Info section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 p-8">
+          <h2 class="text-3xl font-serif font-bold mb-6 text-gray-900">Informații importante</h2>
+          
+          <div class="space-y-6 text-gray-600">
+            <p>
+              Toate produsele funerare comercializate de Forever Funeral Home respectă standardele de calitate și cerințele legale din România. Prețurile produselor variază în funcție de material, dimensiuni, model și alte caracteristici.
+            </p>
+            
+            <p>
+              Pentru a vizualiza întreaga gamă de produse funerare și pentru a primi informații detaliate despre prețuri, vă invităm să ne contactați sau să vizitați sediul nostru. Echipa noastră vă stă la dispoziție pentru a vă prezenta produsele și pentru a vă oferi consultanță în alegerea celor mai potrivite pentru nevoile dumneavoastră.
+            </p>
+            
+            <p>
+              De asemenea, putem personaliza anumite produse (precum coroanele funerare, sicriele sculptate sau crucile) conform cerințelor specifice. Nu ezitați să ne întrebați despre opțiunile de personalizare disponibile.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to action -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Aveți nevoie de asistență?</h2>
+        <p class="text-xl mb-8">
+          Echipa Forever Funeral Home vă stă la dispoziție pentru a vă ajuta să alegeți produsele funerare potrivite nevoilor și preferințelor dumneavoastră.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="/contact" class="inline-flex items-center justify-center bg-white text-primary-600 py-3 px-6 rounded-md hover:bg-gray-100 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contactați-ne
+          </a>
+          <a href="tel:0770171711" class="inline-flex items-center justify-center bg-primary-700 text-white py-3 px-6 rounded-md hover:bg-primary-800 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            0770 171 711
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 
