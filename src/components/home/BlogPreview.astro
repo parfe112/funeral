@@ -1,23 +1,28 @@
 ---
+import { Image } from 'astro:assets';
+import ceremonieImage from '../../assets/blog/ceremonie-inm.jpg';
+import ajutorImage from '../../assets/blog/ajutor-deces.jpg';
+import agentieImage from '../../assets/blog/agentie-prof.jpg';
+
 const blogPosts = [
   {
     title: "Cum să pregătești ceremonia de înmormântare",
     excerpt: "Organizarea unei ceremonii de înmormântare implică multe decizii și aspecte de luat în considerare. Acest ghid te va ajuta să înțelegi pașii necesari.",
-    image: "/images/ceremonie-inm.jpg",
+    image: ceremonieImage,
     date: "15 Martie 2025",
     slug: "/blog/cum-sa-pregatesti-ceremonia-de-inmormantare"
   },
   {
     title: "Ajutorul de deces în 2025",
     excerpt: "Aflați informații actualizate despre ajutorul de deces oferit de stat în 2025, cine poate beneficia și cum se obține.",
-    image: "/images/ajutor-deces.jpg",
+    image: ajutorImage,
     date: "10 Februarie 2025",
     slug: "/blog/ajutorul-de-deces-2025"
   },
   {
     title: "Cum alegi o agenție profesionistă de servicii funerare?",
     excerpt: "Criteriile esențiale pe care să le urmărești atunci când selectezi o agenție de servicii funerare pentru a asigura un serviciu de calitate.",
-    image: "/images/agentie-prof.jpg",
+    image: agentieImage,
     date: "5 Ianuarie 2025",
     slug: "/blog/cum-alegi-agentie-funerara-profesionista"
   }
@@ -37,13 +42,14 @@ const blogPosts = [
       {blogPosts.map(post => (
         <article class="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-2">
           <div class="h-48 overflow-hidden">
-            <img 
+            <Image 
               src={post.image} 
               alt={post.title} 
               class="w-full h-full object-cover"
-              width="400" 
-              height="200"
+              width={400} 
+              height={200}
               loading="lazy" 
+              quality={75}
             />
           </div>
           <div class="p-6">
